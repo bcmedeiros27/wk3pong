@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onclick="changeToRed(`blue`)">words</p>
+    
+    <script>
+        let p = document.querySelector('p');
+        function changeToRed(color) {
+            
+            p.style.color = color;
+        }
+
+        p.onmouseout = (e)=>{
+            e.target.style.color = 'red';
+            e.target.style.fontWeight = `bold`;
+            
+        }
+        var add =(a,b)=> a+b;
+        var sum = add(5,5);
+        p.innerText = sum;
+        p.addEventListener(`scroll`, (e)=>{
+            console.log(e);
+        })
+
+        //Arrow functions
+        //This refers to the root element
+        //call back functions
+        function changeWord(newWord =`Hello`, output=function(a){return a})
+        {
+            p.innerText = newWord;
+            output(p.innerText);
+        }
+        changeWord(`Whats up doc`, function(a){alert(a)});
+        //changeWord(`Whats up doc`, (a)=>{alert(a)});
+
+
+    </script>
+</body>
+</html>
